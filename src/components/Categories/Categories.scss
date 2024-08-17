@@ -1,0 +1,263 @@
+@use '../../styles/variables' as v;
+
+#categories {
+    @media(max-width: 992px) {
+        padding: 1%;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto auto;
+    gap: 1.5rem;
+    max-width: 60rem;
+    width: 100%;
+    text-transform: capitalize;
+    background-color: v.$color-white;
+    
+    & h1 {
+        border: 2px solid v.$color-blue-2;
+        padding: 30px 50px;
+        border-radius: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+    }
+
+    & table {
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        width: 100%;
+
+        & thead {
+
+            & tr {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 0.2rem;
+                width: 100%;
+                color: v.$color-white;
+                background-color: v.$color-grey;
+
+                & button {
+                    margin: 3px 0;
+                    padding: 2px 15px;
+                    font-size: 14px;
+                    background-color: v.$color-white;
+                    color: v.$color-grey;
+                    
+                }
+            }
+        }
+
+        & tbody { 
+            margin-bottom: 1rem;
+            background-color: v.$color-blue-2;
+
+            & #title {
+                display: flex;
+                background-color: v.$color-blue-2;
+
+                .headTabColor {
+                    font-weight: bold;
+                    background-color: v.$color-blue-2;
+                }
+            }
+
+            & tr {
+                display: flex;
+                
+                & td {
+                    width: 100%;
+                    font-weight: 600;
+                    color: black;
+                }
+
+                & .category {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 80%;
+                    font-weight: 400;
+                    border: 1px solid v.$color-blue-2;
+                    background-color: v.$color-white;
+                    @media(max-width: 992px) {
+                        text-overflow: ellipsis;
+                        width: 70%;
+                    }
+                }
+
+                & .action {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    width: 20%;
+                    font-weight: 400;
+                    border: 1px solid v.$color-blue-2;
+                    background-color: v.$color-white;
+                    @media(max-width: 992px) {
+                        width: 30%;
+                    }
+
+                    & button {
+                        font-size: 17px;
+                        background-color: v.$color-white;
+                        color: black;
+                        @media(max-width: 992px) {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(min-width:993px) {
+        .display {
+            z-index: -1;
+            position: fixed;
+            top: -50rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 5%;
+            border-radius: 300px;
+            border: 0.15rem solid v.$color-grey;
+            background-color: v.$color-blue-2;
+            transition: 1500ms;
+
+            & h2 {
+                text-align: center;
+                margin-bottom: 1.5rem;
+                color: v.$color-grey;
+            }
+
+            & p {
+                margin-bottom: 1.5rem;
+                font-weight: 700;
+                color: v.$color-grey;
+            }
+
+            & input {
+                padding: 6px;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+                background-color: v.$color-white;
+                color: v.$color-grey;
+            }
+
+            & button {
+                margin: 3px 0;
+                padding: 2px 15px;
+                font-size: 14px;
+                background-color: v.$color-white;
+                color: v.$color-grey;
+            }
+
+            
+        }
+        .display.open {
+            z-index: 2;
+            position: fixed;
+            top: 3%;
+            left: 33%;
+            right: 33%;
+            bottom: content;
+            max-height: 97%;
+            transition: 1500ms;
+        }
+
+        .curtain.open{
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba($color: v.$color-grey, $alpha: 0.3);
+            transition: 1500ms;
+        }
+    }
+
+    @media(max-width:992px) { 
+        
+        .display {
+            z-index: -1;
+            position: fixed;
+            top: -50rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5%;
+            gap: 1rem;
+            background-color: v.$color-blue-2;
+            transition: 1500ms;
+
+            & h2 {
+                text-align: center;
+                color: v.$color-grey;
+            }
+
+            & input {
+                padding: 6px;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+                color: v.$color-grey;
+                background-color: v.$color-white;
+            }
+
+            & button {
+                font-size: 14px;
+                background-color: v.$color-white;
+                color: v.$color-grey;
+                margin: 3px 0;
+                padding: 2px 15px;
+            }
+
+            
+        }
+        .display.open {
+            z-index: 2;
+            position: fixed;
+            top: 12%;
+            right: 0%;
+            left: 0%;
+            border: 0;
+            bottom: content;
+            border-radius: 0;
+            max-height: 88%;
+            overflow-y: scroll;
+            transition: 1500ms;
+        }
+
+        .curtain.open{
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba($color: v.$color-grey, $alpha: 0.3);
+        }
+    }
+
+    & .actions {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+
+        & button[type='click'] {
+            width: 4rem;
+            height: 2rem;
+            padding: 0;
+            color: v.$color-grey;
+            background-color: v.$color-blue-2;
+        }
+    }
+
+}

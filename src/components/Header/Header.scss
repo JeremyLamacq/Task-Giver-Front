@@ -1,0 +1,21 @@
+@use '../../styles/variables' as v;
+
+#header {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    width: 100%;
+    background-color: v.$color-blue-2;
+
+    .mobilHeader {
+        width: 100%;
+    }
+    
+    .hiddenNav {
+        display: none;
+    }
+}
+
+/* media for ipad*/
+

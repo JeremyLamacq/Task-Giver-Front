@@ -1,0 +1,94 @@
+@use '../../styles/variables' as v;
+
+#errorPage {
+    @media(max-width: 992px) {
+        padding: 1%;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto auto;
+    max-width: 60rem;
+    width: 100%;
+    gap: 1.5rem;
+    background-color: v.$color-white;
+
+    & h1 {
+        text-align: center;
+        padding: 30px 400px;
+        border-radius: 70px;
+        border: 2px solid v.$color-blue-2;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        @media(max-width: 992px) {
+            padding: 20px 90px;
+            margin-bottom: 1rem;
+        }
+    }
+
+    & #centerPage {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        @media(max-width: 992px) {
+            text-align: center;
+            flex-direction: column;
+        }
+
+        & img {
+            z-index: 1;
+            border-radius: 500px;
+            width: v.$image-size;
+            height: v.$image-size;
+            @media(max-width: 992px) {
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        & #textZone {
+            position: relative;
+            top: 2rem;
+            right: 3rem;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2rem;
+            margin:20rem 0 5rem 0;
+            width: 50%;
+            font-size: 1.2rem;
+            color: v.$color-grey;
+            text-shadow: 1px 1px 1px v.$color-blue-1;
+            @media(max-width: 992px) {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                top: -4rem;
+                right: auto;
+                height: min-content;
+                top: -4rem;
+                right: auto;
+                gap: 10px;
+            }
+        }
+    }
+
+    & .actions {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+
+        & button[type='click'] {
+            width: 4rem;
+            height: 2rem;
+            padding: 0;
+            color: v.$color-grey;
+            background-color: v.$color-blue-2;
+        }
+    }
+}

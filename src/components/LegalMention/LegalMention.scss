@@ -1,0 +1,95 @@
+@use '../../styles/variables' as v;
+
+#legalMention {
+    @media(max-width: 992px) {
+        padding: 1%;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto auto;
+    gap: 1.5rem;
+    max-width: 60rem;
+    width: 100%;
+    background-color: v.$color-white;
+
+    & h1 {
+        padding: 30px 300px;
+        border: 2px solid v.$color-blue-2;
+        border-radius: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        color: v.$color-grey;
+        text-transform: uppercase;
+        @media(max-width: 992px) {
+            padding: 20px 20px;
+            margin-bottom: 1rem;
+        }
+    }
+
+    & #centerPage {
+        display: flex;
+        width: 100%;
+        @media(max-width: 992px) {
+            text-align: center;
+            flex-direction: column;
+        }
+        
+        & img {
+            z-index: 1;
+            border-radius: 500px;
+            width: v.$image-size;
+            height: v.$image-size;
+            @media(max-width: 992px) {
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        & p {
+            z-index: 2;
+            position: relative;
+            top: 2rem;
+            right: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin:20rem 0 5rem 0;
+            gap: 2rem;
+            width: 40%;
+            @media(max-width: 992px) {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                top: -4rem;
+                right: auto;
+                height: min-content;
+                top: -4rem;
+                right: auto;
+                gap: 10px;
+            }
+        }
+
+    }
+
+    & .actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        width: 90%;
+
+        & button[type='click'] {
+            padding: 0;
+            width: 4rem;
+            height: 2rem;
+            color: v.$color-grey;
+            background-color: v.$color-blue-2;
+            box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        }
+    }
+
+}

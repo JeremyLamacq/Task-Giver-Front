@@ -1,0 +1,165 @@
+@use '../../styles/variables' as v;
+
+#taskCreator {
+    @media(max-width: 992px) {
+        padding: 1%;
+    }
+    background-color: v.$color-white;
+    margin: 0 auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60rem;
+    width: 100%;
+    gap: 1.5rem;
+
+    & h1 {
+        border: 2px solid v.$color-blue-2;
+        padding: 30px 50px;
+        border-radius: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        @media(max-width: 992px) {
+            padding: 20px 20px;
+            margin-bottom: 1rem;
+        }
+    }
+
+    & section.create {
+        display: flex;
+        width: 100%;
+        gap: 1%;
+        border-radius: 10px;
+        padding: 1rem;
+        font-weight: bold;
+        background-color: v.$color-blue-2;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        @media(max-width: 992px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            gap: 30px;
+            @media(max-width: 992px) {
+                width: 100%;
+                gap: 10px;
+
+            }
+
+            & select {
+                padding: 8px;
+                color: v.$color-grey;
+                background-color: v.$color-white;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+            }
+
+            & input {
+                padding: 6px;
+                color: v.$color-grey;
+                background-color: v.$color-white;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+                text-overflow: ellipsis;
+
+            }
+
+            & textarea {
+                display: flex;
+                vertical-align: bottom;
+                height: 80%;
+                color: v.$color-grey;
+                background-color: v.$color-white;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+                text-overflow: ellipsis;
+            }
+
+            & div {
+                width: 100%;
+                gap: 15px;
+
+                & div {
+                    gap: 0;
+
+                    & p {
+                        color: v.$color-blue-1; 
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    & .assignment {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+        font-weight: bold;
+        background-color: v.$color-blue-2;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        @media(max-width: 992px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        & p {
+            width: 49%;
+            color: v.$color-blue-1;
+            text-transform: uppercase;
+            @media(max-width: 992px) {
+                width: 100%;
+            }
+        }
+
+        & select {
+            width: 49%;
+            padding: 8px;
+            color: v.$color-grey;
+            background-color: v.$color-white;
+            border: 2px solid v.$color-blue-2;
+            border-radius: 5px;
+            @media(max-width: 992px) {
+                width: 100%;
+            }
+        }
+    }
+
+    & .actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        width: 100%;
+        gap: 15%;
+        margin: 1.5rem 0;
+
+        & button[type='submit'] {
+            color: v.$color-grey;
+            background-color: v.$color-blue-2;
+            width: 4rem;
+            height: 2rem;
+            padding: 0;
+        }
+
+
+
+        & button[type='click'] {
+            color: v.$color-grey;
+            background-color: v.$color-blue-2;
+            width: 4rem;
+            height: 2rem;
+            padding: 0;
+            box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        }
+    }
+
+   }
