@@ -1,0 +1,131 @@
+@use '../../styles/variables' as v;
+
+#teamPage {
+    @media(max-width: 992px) {
+        padding: 1%;
+    }
+    margin: 0 auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60rem;
+    width: 100%;
+    gap: 1.5rem;
+    
+    & h1 {
+        border: 2px solid v.$color-blue-2;
+        padding: 30px 50px;
+        border-radius: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+    }
+
+    & article {
+        font-size: 1.2rem;
+        color: v.$color-grey;
+    }
+    
+    & table {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        text-transform: capitalize;
+        
+        & thead {
+            & tr {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+                background-color: v.$color-grey;
+                
+                & th {
+                    padding-left: 0.5rem;
+                    color: v.$color-white;
+                    background-color: v.$color-grey;
+                    text-align: left;
+                    
+                    & button {
+                        width: 3.6rem;
+                        font-size: 10px;
+                        background-color: v.$color-white;
+                        color: v.$color-grey;
+                        font-weight: 900;
+                        margin: 3px 7px 3px 0;
+                        padding: 2px 10px;
+
+                    }
+                }
+            }
+        }
+        
+        & tbody { 
+            margin-bottom: 1rem;
+            
+            & tr {
+                display: flex;
+                
+                & td {
+                    text-align: center;
+                    width: calc(100%/3);
+                    color: black;
+                    font-weight: 600;
+                    background-color: v.$color-blue-2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding:0.2rem 0.5rem;
+                    
+                    
+                    & a {
+                        color: black;
+                    }
+                }
+                
+                & .member {
+                    font-weight: 400;
+                    border: 1px solid v.$color-blue-2;
+                    background-color: v.$color-white;
+                    color: black;
+                }
+
+                & .memberRolesState {
+                    display: flex;
+                     
+                    & .badge {
+                        border: none;
+                        text-transform: lowercase;
+                        background-color: v.$color-blue-2;
+                        border-radius: 50px;
+                        margin: 0.2rem 0.5rem;
+                        width: 4rem;
+                        max-width: 4rem;
+                        display: flex;
+                        justify-content: space-around;
+                        box-shadow: 0.5px 0.5px 0.5px v.$color-grey;
+                    }
+                }
+            }
+        }
+    }
+    
+    & .actions {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin-top: 0.8rem;
+        
+        & button[type='click'] {
+            color: v.$color-grey;
+            background-color: v.$color-blue-2;
+            width: 4rem;
+            height: 2rem;
+            padding: 0;
+            box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        }
+    }
+    
+}

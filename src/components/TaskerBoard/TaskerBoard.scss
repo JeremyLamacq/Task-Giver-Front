@@ -1,0 +1,265 @@
+@use '../../styles/variables' as v;
+
+#taskerBoard {
+    @media(max-width: 992px) {
+        padding: 1%;
+    }
+    margin:0 auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60rem;
+    width: 100%;
+    gap: 1.5rem;
+    text-transform: capitalize;
+
+    #bottomTable {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @media(max-width: 992px) {
+            flex-direction: column;
+        }
+
+        & table {
+            width: 48%;
+
+            @media(max-width: 992px) {
+                width: 100%;
+            }
+        }
+    }
+    & h1 {
+        border: 2px solid v.$color-blue-2;
+        padding: 30px 50px;
+        border-radius: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+
+    }
+
+    #topTable {
+
+        & .taskAgree {
+
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            @media(max-width: 992px) {
+                gap: 1rem;
+            }
+
+            & button {
+                font-size: 17px;
+                background-color: v.$color-white;
+                color: black;
+                padding: 0;
+            }
+        }
+    }
+
+    & table {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+
+        & thead {
+            & tr {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+                background-color: v.$color-grey;
+
+                & th {
+                    padding-left: 0.5rem;
+                    color: v.$color-white;
+                    background-color: v.$color-grey;
+                    text-align: left;
+                }
+
+                & .createTask {
+
+                    & button {
+                        width: 3.6rem;
+                        font-size: 10px;
+                        background-color: v.$color-white;
+                        color: v.$color-grey;
+                        font-weight: 900;
+                        margin: 3px 3px 3px 0;
+                        padding: 2px 10px;
+                    }
+                }
+            }
+        }
+
+        & tbody { 
+            margin-bottom: 1rem;
+
+            a{
+                color: v.$color-grey;
+            }
+    
+            & tr {
+                display: flex;
+                
+                & .columnBigSize {
+                    width: 80%;
+                }
+
+                & .columnMediumSize {
+                    width: 80%;
+                    @media(max-width: 992px) {
+                        width: 70%; 
+                    }
+                }
+
+                & .columnSmallSize {
+                    width: 20%;
+                    @media(max-width: 992px) {
+                        width: 30%;
+                        max-width: 30%;
+                        white-space: nowrap;
+                    }
+                }
+
+                & td {
+                    width: 100%;
+                    color: black;
+                    background-color: v.$color-blue-2;
+                    overflow: hidden;
+                    max-height: 2rem;
+                    text-overflow: ellipsis;
+                    padding:0.2rem 0.5rem;
+                }
+
+                & .task {
+                    font-weight: 400;
+                    background-color: v.$color-white;
+                    border: 1px solid v.$color-blue-2;
+                    text-overflow: ellipsis;
+                }
+
+                .lineLink {
+                    display: flex;
+                    width: 100%;
+    
+                    & .member, .category {
+                        font-weight: 400;
+                        background-color: v.$color-white;
+                        border: 1px solid v.$color-blue-2;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(min-width:993px){
+        .display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: v.$color-blue-2;
+            border: 0.15rem solid v.$color-grey;
+            border-radius: 300px;
+            padding: 5%;
+            gap: 1rem;
+            z-index: -1;
+            transition: 1500ms;
+            position: fixed;
+            top: -50rem;
+
+            & h2 {
+                color: v.$color-grey;
+                text-align: center;
+            }
+
+            & button {
+                font-size: 14px;
+                background-color: v.$color-white;
+                color: v.$color-grey;
+                margin: 3px 0;
+                padding: 2px 15px;
+            }  
+        }
+
+        .display.open {
+            z-index: 2;
+            transition: 1500ms;
+            position: fixed;
+            top: 3%;
+            right: 33%;
+            bottom: content;
+            max-height: 97%;
+            left: 33%;
+        }
+
+        .curtain.open{
+            z-index: 1;
+            transition: 1500ms;
+            background-color: rgba($color: v.$color-grey, $alpha: 0.3);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    @media(max-width:992px){
+        .display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: v.$color-blue-2;
+            padding: 5%;
+            gap: 1rem;
+            z-index: -1;
+            transition: 1500ms;
+            position: fixed;
+            top: -50rem;
+
+            & h2 {
+                color: v.$color-grey;
+                text-align: center;
+            }
+
+            & button {
+                font-size: 14px;
+                background-color: v.$color-white;
+                color: v.$color-grey;
+                margin: 3px 0;
+                padding: 2px 15px;
+            }   
+        }
+
+        .display.open {
+            z-index: 2;
+            transition: 1500ms;
+            position: fixed;
+            border: 0;
+            border-radius: 0;
+            top: 12%;
+            right: 0%;
+            bottom: content;
+            max-height: 88%;
+            left: 0%;
+            overflow-y: scroll;
+        }
+
+        .curtain.open{
+            z-index: 1;
+            background-color: rgba($color: v.$color-grey, $alpha: 0.3);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+}

@@ -1,0 +1,485 @@
+@use '../../styles/variables' as v;
+
+#members {
+    @media(max-width: 992px) {
+        padding: 1%;
+    }
+    background-color: v.$color-white;
+    margin: 0 auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60rem;
+    width: 100%;
+    gap: 1.5rem;
+    text-transform: capitalize;
+    
+    & h1 {
+        border: 2px solid v.$color-blue-2;
+        padding: 30px 50px;
+        border-radius: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        box-shadow: 1px 0.5px 0.5px v.$color-grey;
+    }
+
+    & table {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        
+
+        & thead {
+
+            & tr {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 0.2rem;
+                color: v.$color-white;
+                background-color: v.$color-grey;
+                
+
+                & button {
+                    font-size: 14px;
+                    background-color: v.$color-white;
+                    color: v.$color-grey;
+                    margin: 3px 0;
+                    padding: 2px 15px;             
+                }
+            }
+        }
+
+        & tbody { 
+            margin-bottom: 1rem;
+            background-color: v.$color-blue-2;
+
+            & a {
+                color: v.$color-grey;
+            }
+
+            & #title {
+                width: 100%;
+                gap: 20%;
+                padding-left: 0.5%;
+                background-color: v.$color-blue-2;
+                @media(max-width: 992px) {
+                    gap: 0;
+                }
+
+                & td {
+                    display: flex;
+                    justify-content: start;
+                    width: 25%;
+                    @media(max-width: 992px) {
+                        width: 24.8%;
+                    }
+                    
+                }
+                
+                & .actions {
+                    display: flex;
+                    justify-content: center;
+                    padding: 0 7.5% 0 7%;
+                    @media(max-width: 992px) {
+                        padding: 0;
+                    }
+                }
+
+            }
+            
+            & #taskerTitle {
+                width: 100%;
+                gap: 30%;
+                padding-left: 0.5%;
+                background-color: v.$color-blue-2;
+                @media(max-width: 992px) {
+                    gap: 9%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                
+                & td {
+                    display: flex;
+                    justify-content: start;
+                    width: calc(100%/3);
+                    width:100%;
+                    
+                }
+                
+                & .actions {
+                    display: flex;
+                    justify-content: center;
+                    padding: 0 7.5% 0 7%;
+                    @media(max-width: 992px) {
+                        padding: 0;
+                    }
+                }
+            }
+            
+            & tr {
+                display: flex;
+                background-color: v.$color-white;
+                width: 100%;
+                
+                & .link {
+                    width: 80%;
+                    display: flex;
+                    @media(max-width: 992px) {
+                        width: 73%;
+                    }
+                    
+                    & .member {
+                        display: flex;
+                        align-items: center;
+                        width: 80%;
+                        border: 1px solid v.$color-blue-2;
+                        color: v.$color-grey;
+                        font-weight: 400;
+                        text-overflow: ellipsis;
+                        padding-left: 0.5rem;
+                        
+                        @media(max-width: 992px) {
+                            width: 100%;
+                            // display: table-cell;
+                            overflow: hidden;
+                            white-space: normal;
+                            text-overflow: ellipsis;
+                        }
+                        
+                        
+                    }
+                    
+                }
+                
+                & .tasker {
+                    display: flex;
+                    align-items: center;
+                    width: calc(100%/2);
+                    border: 1px solid v.$color-blue-2;
+                    padding-left: 0.5%;
+                    color: v.$color-grey;
+                    font-weight: 400;
+                }
+            }
+            
+            & .action {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                width: 20%;
+                font-weight: 400;
+                color: v.$color-grey;
+                border: 1px solid v.$color-blue-2;
+                background-color: v.$color-white;
+                @media(max-width: 992px) {
+                    width: 27%;
+                    padding: 0;
+                    }
+                    
+                    & button {
+                        font-size: 17px;
+                        background-color: v.$color-white;
+                        color: black;
+                        @media(max-width: 992px) {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+        & .memberRolesState {
+            
+            display: flex;
+            align-items: center;
+            
+            @media(max-width: 992px) {
+                margin: 0;
+                flex-direction: column;
+                height: 5rem;
+                justify-content: center;
+                gap: 0.3rem;
+            }
+
+            & .badge {
+                border: none;
+                text-transform: lowercase;
+                background-color: v.$color-blue-2;
+                color: v.$color-grey;
+                border-radius: 50px;
+                margin: 0 0.5rem;
+                width: fit-content;
+                max-width: 3.8rem;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                box-shadow: 0.5px 0.5px 0.5px v.$color-grey;
+                padding: 0;
+
+                @media(max-width: 992px) {
+                    margin: 0;
+                    height: 1.4rem;
+                }
+            }
+       
+            
+        }
+    
+    // Widget
+
+    @media(min-width:993px) {
+
+        .display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: v.$color-blue-2;
+            border: 0.15rem solid v.$color-grey;
+            border-radius: 300px;
+            padding: 5%;
+            gap: 1rem;
+            z-index: -1;
+            transition: 1500ms;
+            position: fixed;
+            top: -50rem;
+            
+            & h2 {
+                color: v.$color-grey;
+                text-align: center;
+            }
+            
+            & section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                
+                & div {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    width: 70%;
+                    margin: 0 2rem;
+                    
+                    & div {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        & select {
+                            padding: 6px;
+                            color: v.$color-grey;
+                            background-color: v.$color-white;
+                            border: 2px solid v.$color-blue-2;
+                            border-radius: 5px;
+                        }
+                        
+                        & input {
+                            padding: 6px;
+                            color: v.$color-grey;
+                            background-color: v.$color-white;
+                            border: 2px solid v.$color-blue-2;
+                            border-radius: 5px;
+                            text-overflow: ellipsis;
+                        }
+                        
+                        & textarea {
+                            padding: 6px;
+                            display: flex;
+                            vertical-align: bottom;
+                            height: 80%;
+                            color: v.$color-grey;
+                            background-color: v.$color-white;
+                            border: 2px solid v.$color-blue-2;
+                            border-radius: 5px;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+            
+            & select {
+                padding: 6px;
+                color: v.$color-grey;
+                background-color: v.$color-white;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+            }
+            
+            & input {
+                padding: 6px;
+                color: v.$color-grey;
+                background-color: v.$color-white;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+                text-overflow: ellipsis;
+            }
+            
+            & button {
+                font-size: 14px;
+                background-color: v.$color-white;
+                color: v.$color-grey;
+                margin: 3px 0;
+                padding: 2px 15px;
+            }
+            
+            
+        }
+        .display.open {
+            z-index: 2;
+            transition: 1500ms;
+            position: fixed;
+            top: 3%;
+            right: 33%;
+            bottom: content;
+            max-height: 97%;
+            left: 33%;
+        }
+        
+        .curtain.open{
+            z-index: 1;
+            transition: 1500ms;
+            background-color: rgba($color: v.$color-grey, $alpha: 0.3);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    
+    @media(max-width:992px) { 
+        
+        .display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: v.$color-blue-2;
+            padding: 5%;
+            gap: 1rem;
+            z-index: -1;
+            transition: 1500ms;
+            position: fixed;
+            top: -50rem;
+            
+            & h2 {
+                color: v.$color-grey;
+                text-align: center;
+            }
+            
+            & section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                
+                & div {
+                    
+                    & div {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        & select {
+                            padding: 6px;
+                            color: v.$color-grey;
+                            background-color: v.$color-white;
+                            border: 2px solid v.$color-blue-2;
+                            border-radius: 5px;
+                        }
+                        
+                        & input {
+                            padding: 6px;
+                            color: v.$color-grey;
+                            background-color: v.$color-white;
+                            border: 2px solid v.$color-blue-2;
+                            border-radius: 5px;
+                            text-overflow: ellipsis;
+                        }
+                        
+                        & textarea {
+                            padding: 6px;
+                            display: flex;
+                            vertical-align: bottom;
+                            color: v.$color-grey;
+                            background-color: v.$color-white;
+                            border: 2px solid v.$color-blue-2;
+                            border-radius: 5px;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+            
+            & select {
+                padding: 6px;
+                color: v.$color-grey;
+                background-color: v.$color-white;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+            }
+            
+            & input {
+                padding: 6px;
+                color: v.$color-grey;
+                background-color: v.$color-white;
+                border: 2px solid v.$color-blue-2;
+                border-radius: 5px;
+                text-overflow: ellipsis;
+            }
+            
+            & button {
+                font-size: 14px;
+                background-color: v.$color-white;
+                color: v.$color-grey;
+                margin: 3px 0;
+                padding: 2px 15px;
+            }
+            
+            
+        }
+        .display.open {
+            z-index: 2;
+            transition: 1500ms;
+            position: fixed;
+            border: 0;
+            border-radius: 0;
+            top: 12%;
+            right: 0%;
+            bottom: content;
+            max-height: 88%;
+            left: 0%;
+            overflow-y: scroll;
+        }
+        
+        .curtain.open{
+            z-index: 1;
+            background-color: rgba($color: v.$color-grey, $alpha: 0.3);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    
+    & .actions {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        
+        & button[type='click'] {
+            color: v.$color-grey;
+            background-color: v.$color-blue-2;
+            width: 4rem;
+            height: 2rem;
+            padding: 0;
+            box-shadow: 1px 0.5px 0.5px v.$color-grey;
+        }
+    }
+    
+}

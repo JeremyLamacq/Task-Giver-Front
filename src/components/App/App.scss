@@ -1,0 +1,13 @@
+
+@use '../../styles/variables' as v;
+
+#root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100%;
+  background-color: v.$color-white;
+  color: black;
+}

@@ -1,0 +1,193 @@
+@use '../../styles/variables' as v;
+
+#navbar { 
+    background-color: v.$color-blue-2;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    min-width: 60rem;
+    width: 100%;
+
+    .hiddenNav {
+        display: none;
+    }
+    & nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 60rem;
+        width: 100%;
+        height: 80px;
+        gap: 10rem;
+        
+        
+        & #leftNavbar {
+            
+            display: flex;
+            gap: 2rem;
+            width: 100%;
+            
+            
+            & #logo {
+                display: flex;
+                background-color: v.$color-white;
+                color: v.$color-red;
+                border-radius: 50px;
+                width: 3rem;
+                height: 3rem;
+                justify-content: center;
+                align-items: center;
+                font-weight: 900;
+                font-size: 0.8rem;
+                line-height: 1;
+                padding-left: 0.5rem;
+                text-shadow: 0.5px 0.5px 0.5px v.$color-blue-2;
+            }
+            
+            .hiddeBoardButtons {
+                visibility: hidden;
+            }
+            & #boardButtons {
+                display:flex;
+                align-items: center;
+                gap: 2rem;
+                width: 60%;
+                
+                
+                & button {
+                    text-align: center;
+                    font-size: 0.8rem;
+                    padding: 0;
+                    width: 5rem;
+                    height: 1.8rem;
+                    background-color: v.$color-white;
+                    color: v.$color-blue-1;
+                    font-weight: 700;
+                }
+            }   
+        }
+        & #leftUnloggedNavbar {
+            display: flex;
+            gap: 2rem;
+
+            & #logo {
+                display: flex;
+                background-color: v.$color-white;
+                color: v.$color-red;
+                border-radius: 50px;
+                width: 3rem;
+                height: 3rem;
+                justify-content: center;
+                align-items: center;
+                font-weight: 900;
+                font-size: 0.8rem;
+                line-height: 1;
+                padding-left: 0.5rem;
+                text-shadow: 0.5px 0.5px 0.5px v.$color-blue-2;
+            }
+            & #homeButton {
+                display:flex;
+                align-items: center;
+                gap: 2rem;
+                
+                & button {
+                    text-align: center;
+                    font-size: 0.8rem;
+                    padding: 0;
+                    width: 5rem;
+                    height: 1.8rem;
+                    background-color: v.$color-white;
+                    color: v.$color-blue-1;
+                    font-weight: 700;
+                }
+            }
+
+        }
+        & .hiddenButton {
+            visibility: hidden;
+        }
+        
+
+        & #inscriptionButton {
+            display: flex;
+            gap: 2rem;
+            button {
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 0;
+                width: 5rem;
+                height: 1.8rem;
+                background-color: v.$color-white;
+                color: v.$color-blue-1;
+                font-weight: 700;              
+            }
+
+        }
+
+        & #userMenu {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            list-style: none;
+            padding:1px;
+            width: 50%;
+
+            
+            
+            .hiddeUserSelect {
+                visibility: hidden;
+                transition: visibility 0.1s ease;
+            }
+            & #userSelect {
+                display: flex;
+                flex-direction: column;
+                background-color: v.$color-white;
+                color: v.$color-blue-1;
+                font-weight: 700;
+                width: 200px;
+                height: 140px;
+                padding: 0 0 0 0rem;
+                gap: 1rem;
+                justify-content: center;
+                border: 0.5px solid v.$color-blue-2;
+                border-radius: 10px;
+                position: relative;
+                top: 55px;
+                right: 20px;
+                font-size: 0.8rem;
+                
+            }
+                  
+                & span {
+                padding-left: 1rem;
+                }
+         
+           
+
+            & #userLinks {
+                list-style: none;
+                padding:10px 0 0 0;
+                border-top: 0.5px solid v.$color-blue-2; 
+                & :hover {
+                    background-color: rgb(224, 228, 231);
+                }
+                
+                & li {
+                    margin-bottom: 0.3rem;                  
+                    & span {
+                        color: v.$color-blue-1;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+            & #userIcon {
+                background-color: v.$color-white;
+                border-radius: 50px;
+                padding: 10px;
+                position: absolute;
+                z-index: 1;
+            }
+        }
+    }
+} 
+ 
