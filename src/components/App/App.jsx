@@ -38,7 +38,7 @@ import "./App.scss";
 const App = () => {
   // eslint-disable-next-line no-unused-vars
   // const urlApi = "http://jeremylamacq-server.eddi.cloud/api"
-  const urlApi = "http://127.0.0.1:8080"
+  const urlApi = "https://task-giver.onrender.com"
 
   const [token, setToken] = useState(null);
   const [isLogin, setIsLogin] = useState(false);

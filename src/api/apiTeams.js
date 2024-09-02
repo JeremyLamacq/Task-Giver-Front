@@ -1,4 +1,4 @@
-const urlApi = "http://127.0.0.1:8080"
+const urlApi = "https://task-giver.onrender.com"
 // const urlApi = "http://jeremylamacq-server.eddi.cloud/api"
 
 const fetchTeams = async (token) => {
